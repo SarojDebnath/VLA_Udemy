@@ -1,0 +1,90 @@
+{
+ "full recipe: 16-step chunk, relative targets, 2 cameras": {
+  "success": 1.0,
+  "ci": [
+   0.9286524008666414,
+   1.0
+  ],
+  "per_task": {
+   "pick": 1.0,
+   "place": 1.0
+  }
+ },
+ "classic BC: 1 step, raw delta actions": {
+  "success": 0.16,
+  "ci": [
+   0.08337420678033405,
+   0.2851421606303499
+  ],
+  "per_task": {
+   "pick": 0.32,
+   "place": 0.0
+  }
+ },
+ "1 step, relative targets": {
+  "success": 0.12,
+  "ci": [
+   0.05617600150932274,
+   0.23804817383202992
+  ],
+  "per_task": {
+   "pick": 0.24,
+   "place": 0.0
+  }
+ },
+ "16-step chunk, raw delta actions": {
+  "success": 0.96,
+  "ci": [
+   0.8653990931249297,
+   0.9889611156723802
+  ],
+  "per_task": {
+   "pick": 0.92,
+   "place": 1.0
+  }
+ },
+ "full recipe, front camera only": {
+  "success": 1.0,
+  "ci": [
+   0.9286524008666414,
+   1.0
+  ],
+  "per_task": {
+   "pick": 1.0,
+   "place": 1.0
+  }
+ },
+ "full recipe, wrist camera only": {
+  "success": 0.98,
+  "ci": [
+   0.8950455641036219,
+   0.9964607407283539
+  ],
+  "per_task": {
+   "pick": 0.96,
+   "place": 1.0
+  }
+ },
+ "full recipe, 50 demos": {
+  "success": 0.66,
+  "ci": [
+   0.521538260502326,
+   0.7756305077749992
+  ],
+  "per_task": {
+   "pick": 0.8,
+   "place": 0.52
+  }
+ },
+ "full recipe, no augmentation": {
+  "success": 1.0,
+  "ci": [
+   0.9286524008666414,
+   1.0
+  ],
+  "per_task": {
+   "pick": 1.0,
+   "place": 1.0
+  }
+ }
+}

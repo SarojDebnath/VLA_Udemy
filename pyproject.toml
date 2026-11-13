@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vlacourse"
+version = "0.1.0"
+description = "Shared helpers for the VLA course (TableTop world, Panda IK, scripted expert, video tools)"
+requires-python = ">=3.10"
+dependencies = ["mujoco>=3.3", "mujoco-menagerie", "numpy", "opencv-python", "matplotlib", "imageio", "imageio-ffmpeg"]
+
+[tool.setuptools]
+packages = ["vlacourse"]

@@ -77,7 +77,6 @@ Locomotion policies trained this way are the "body" under a humanoid VLA: the VL
 ## References
 - MuJoCo docs: *MJX*; Zakka et al. 2025, *MuJoCo Playground*
 - Rudin et al. 2022, *Learning to walk in minutes using massively parallel deep RL*
-- Kandapagari, *Action Models for Robot Learning*, §7.3, §7.5
 
 ---
 

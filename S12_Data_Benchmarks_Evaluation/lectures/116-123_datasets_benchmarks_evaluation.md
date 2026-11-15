@@ -65,7 +65,7 @@ Notebook 121 validates the harness with a controllable "policy quality" knob (ex
 
 All three policies look identical under nominal conditions (97%) and come apart under perturbation. The worst condition is the same for all of them: a change of table colour, i.e. the *background* they were never asked to ignore. Small camera shifts and physics changes cost little. A single nominal success rate hides all of this, and that's the argument for reporting a matrix. S13 notebook 131 fixes the visual weakness with randomized training data. The video shows one policy on the same episode in three of these worlds. Notebook 122 repeats the seed study for OpenVLA on LIBERO (Colab).
 
-**Real-robot evaluation (book §15.5):** fix the reset protocol, randomize the order of policies, blind the operator, log videos, report time-to-completion and interventions, and still use intervals.
+**Real-robot evaluation:** fix the reset protocol, randomize the order of policies, blind the operator, log videos, report time-to-completion and interventions, and still use intervals.
 
 ## Key takeaways
 - LeRobotDataset v3 = Parquet + MP4 + metadata with stats; `delta_timestamps` defines chunks and history.
@@ -75,4 +75,3 @@ All three policies look identical under nominal conditions (97%) and come apart 
 ## References
 - Cadene et al. 2024 (LeRobot); Liu et al. 2023 (LIBERO); Li et al. 2024 (SimplerEnv); Nasiriany et al. 2024 (RoboCasa)
 - Wilson 1927; Agresti & Coull 1998
-- Kandapagari, *Action Models for Robot Learning*, Ch. 15, Exercises 15.x.1–15.x.5

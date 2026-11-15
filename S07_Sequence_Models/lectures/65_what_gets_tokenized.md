@@ -44,4 +44,3 @@ Decision Transformer: 3 (R, s, a). RT-1: 6 images × 8 TokenLearner tokens + 11 
 
 ## References
 - Chen et al. 2021 (Decision Transformer); Brohan et al. 2022 (RT-1); Pertsch et al. 2025 (FAST)
-- Kandapagari, *Action Models for Robot Learning*, §8.4, §11.3

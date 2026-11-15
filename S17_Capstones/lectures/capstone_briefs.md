@@ -85,6 +85,14 @@ Generation yield: 500 of 502 replays succeeded. The generated data inherits the 
 **Extensions:** drive through the 42b crowd with MPC; find the table from the camera; two cubes per request; one end-to-end policy that also outputs base velocities.
 **Rubric:** pipeline with per-stage success (30%), grounding test (20%), one measured improvement (40%), video (10%).
 
+## C8 · A self-driving car in a MuJoCo city (🟡) · `C8_city_driver.ipynb` (reference solution) · full notes: `C8_city_driver.md`
+**World:** a procedural MuJoCo city (16 intersections with traffic lights, 24 IDM traffic cars, 40 pedestrians, a jaywalker); the ego car is controlled by acceleration and curvature at 10 Hz.
+**Pipeline:** privileged expert (pure pursuit + IDM, says *why*) → 800 drives with DART noise → a mini driving VLA (2 camera frames + speed + CLIP instruction → flow-matching head: 6 sampled 2 s plans of (a, κ); reasoning head: 1 of 6 reasons) → closed-loop evaluation per scenario.
+**Reference results (150 episodes):** model **90%** routes completed (expert 99%), **1.7 km per incident** (expert: 0 incidents in 19.8 km); reasoning head 96% on held-out frames.
+**Lesson:** open-loop numbers (96% reasons, low validation loss) don't predict the 11 incidents; only closed loop does.
+**Extensions:** no noise injection; one frame vs two; six cameras; an unseen city layout; night driving; early stopping.
+**Rubric:** closed-loop table with CIs per scenario (30%), one ablation with a measured effect (40%), failure analysis from videos (20%), video (10%).
+
 ---
 
 ## What to submit (all capstones)

@@ -1,0 +1,15 @@
+{
+ "plan_acc": {
+  "HuggingFaceTB/SmolLM2-1.7B-Instruct": 0.5,
+  "Qwen/Qwen2.5-7B-Instruct": 1.0
+ },
+ "planner": "Qwen/Qwen2.5-7B-Instruct",
+ "towers": {
+  "open loop (plan executed once)": 13,
+  "with task-level feedback": 17
+ },
+ "level_success": {
+  "1": 0.9,
+  "2": 0.8
+ }
+}

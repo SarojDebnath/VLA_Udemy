@@ -70,7 +70,7 @@ A pole with a ball on top, released almost upright, falls left or right dependin
 | Failure | out-of-distribution states | compounding model error, hallucinated plans |
 | Generalization | across instructions seen in data | to new goals and objectives without retraining |
 
-The field is converging: VLAs add predictive auxiliary objectives (future-frame or latent prediction), and world models add policy heads. The book's position: they are complementary layers of the same system.
+The field is converging: VLAs add predictive auxiliary objectives (future-frame or latent prediction), and world models add policy heads. They are best seen as complementary layers of the same system.
 
 ## Key takeaways
 - With an accurate model, sampling-based MPC (MPPI) solves control with zero training.
@@ -80,4 +80,3 @@ The field is converging: VLAs add predictive auxiliary objectives (future-frame 
 ## References
 - Williams et al. 2017 (MPPI); Hafner et al. 2019–2023 (PlaNet, Dreamer V1–V3); Hansen et al. 2022 (TD-MPC)
 - Bruce et al. 2024 (Genie); Assran et al. 2025 (V-JEPA 2); NVIDIA 2025 (Cosmos)
-- Kandapagari, *Action Models for Robot Learning*, Ch. 9, Exercises 9.x.1–9.x.4

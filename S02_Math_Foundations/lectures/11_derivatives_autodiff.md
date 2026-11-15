@@ -49,4 +49,3 @@ $$\frac{\partial f}{\partial x_j} \approx \frac{f(x + h e_j) - f(x - h e_j)}{2h}
 ## References
 - Baydin et al. 2018, *Automatic Differentiation in Machine Learning: a Survey*
 - Karpathy, *micrograd*
-- Kandapagari, *Action Models for Robot Learning*, §3.1

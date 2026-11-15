@@ -54,4 +54,3 @@ The last one connects straight to lecture 12: **a loss that plateaus high on cle
 
 ## References
 - Karpathy, *A Recipe for Training Neural Networks* (2019)
-- Kandapagari, *Action Models for Robot Learning*, §3.3, §3.5, Exercises 3.x.1–3.x.2

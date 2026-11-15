@@ -61,4 +61,3 @@ $$w(q) = \sqrt{\det(JJ^\top)} = \prod_i \sigma_i$$
 ## References
 - Strang, *Introduction to Linear Algebra*, Ch. 4 and 7
 - Lynch & Park, *Modern Robotics*, §5.4 (manipulability)
-- Kandapagari, *Action Models for Robot Learning*, §3.1, Appendix A

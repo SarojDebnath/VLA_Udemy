@@ -45,7 +45,7 @@ So value iteration $V_{k+1} = \mathcal TV_k$ converges geometrically to the uniq
 | Q-learning, SARSA | no (samples) | stochastic approximation of the Bellman equation |
 | Policy gradient, PPO | no | optimize π directly from returns |
 
-## 6. From MDP to robot (book §5.5)
+## 6. From MDP to robot
 Every robotics RL paper makes four design decisions:
 1. **State/observation:** joint angles, object poses, images? Partial observability breaks the Markov property, so add history or memory.
 2. **Action space:** torques, joint targets, end-effector deltas; and the control rate. These shape the exploration difficulty enormously.
@@ -61,4 +61,3 @@ Our `PandaReachEnv`: 20-D state (joints, velocities, target offset, ee position)
 
 ## References
 - Sutton & Barto, *Reinforcement Learning: An Introduction* (2nd ed.), Ch. 3–4
-- Kandapagari, *Action Models for Robot Learning*, §5.1–5.2, §5.5

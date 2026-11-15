@@ -1,9 +1,9 @@
 # VLA Mastery: Vision-Language-Action Models, from First Principles to Deployment
 
-Course code for the Udemy course: 125 Jupyter notebooks plus Markdown lecture notes. You build the whole stack of
+Course code for the Udemy course: 127 Jupyter notebooks plus Markdown lecture notes. You build the whole stack of
 robot learning in MuJoCo, from rotations and PD control to behaviour cloning, ACT, Diffusion Policy, flow matching
 and your own small Vision-Language-Action model, with Menagerie robots (Franka Panda, UR5e, ALOHA, Unitree Go2/G1,
-Skydio X2, SO-101).
+Skydio X2, SO-101), and a self-driving car in a procedural MuJoCo city.
 
 **Start here: [STUDENT_GUIDE.md](STUDENT_GUIDE.md).** It covers the setup, the order to work through the course, and what to do when
 something breaks.

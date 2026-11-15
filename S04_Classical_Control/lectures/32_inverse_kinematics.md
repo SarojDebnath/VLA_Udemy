@@ -56,4 +56,3 @@ Most VLAs (RT-1/2, OpenVLA, LIBERO) output **end-effector deltas**, and an IK or
 ## References
 - Buss 2004, *Introduction to Inverse Kinematics with Jacobian Transpose, Pseudoinverse and DLS*
 - Beeson & Ames 2015, *TRAC-IK*
-- Kandapagari, *Action Models for Robot Learning*, §4.2

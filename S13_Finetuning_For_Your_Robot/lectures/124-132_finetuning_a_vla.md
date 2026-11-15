@@ -15,7 +15,7 @@ $$W = W_0 + \frac{\alpha}{r}BA,\qquad B\in\mathbb R^{d\times r},\ A\in\mathbb R^
 - **Memory (notebook estimates, weights + grads + Adam):** OpenVLA-7B full fine-tune ≈ 120 GB, LoRA ≈ 16 GB, QLoRA ≈ 5 GB; π0 ≈ 53 / 7 / 2 GB. That's why QLoRA is what makes a 7B VLA fine-tunable on one consumer GPU.
 - **Memory:** a full fine-tune of a 7B model needs ~112 GB (weights + gradients + Adam). LoRA trains ~1% of the parameters; **QLoRA** (Dettmers 2023) also stores the frozen base in 4-bit NF4, so OpenVLA fits on a single consumer or Colab GPU.
 
-## 125 · Picking a base model and a fine-tuning mode (book §16.1, §16.3)
+## 125 · Picking a base model and a fine-tuning mode
 | Base | Size | Strength | When |
 |---|---|---|---|
 | OpenVLA | 7.5B | tokens, OXE pretraining, LoRA-friendly | single third-person camera, slow control is OK |
@@ -26,7 +26,7 @@ $$W = W_0 + \frac{\alpha}{r}BA,\qquad B\in\mathbb R^{d\times r},\ A\in\mathbb R^
 
 Modes: **head-only** (fast; weak if the visual domain changes), **LoRA** (the default, ≈ full quality), **full** (best with lots of data and compute; risk of forgetting). Keep the vision encoder trainable when the scene looks different from pretraining (OpenVLA's finding).
 
-## 126 · Demonstrations that don't waste your time (book §16.2)
+## 126 · Demonstrations that don't waste your time
 Notebook result, success on the FULL workspace:
 
 | Demonstrations | 40 | 160 |
@@ -42,7 +42,7 @@ Checklist: one consistent action convention and gripper sign; reset and re-rando
 - **SmolVLA via LeRobot** (Colab): `lerobot-train --policy.path=lerobot/smolvla_base --dataset.root=<v3 dataset>`, with a `--rename_map` from our camera names to the policy's `camera1/camera2`. The base config expects a 6-D state and 3 cameras; when you fine-tune, the dataset's features define the new input and output heads.
 - **OpenVLA QLoRA** (Colab): 4-bit base + LoRA r = 32 on all linear layers, actions mapped to the last 256 vocabulary ids with your own q01/q99, **left padding** so action tokens follow the prompt.
 
-## 129–130 · Ablations and over-specialization (book §16.3–16.4)
+## 129–130 · Ablations and over-specialization
 On MiniVLA v2 (SmolVLM-256M + LoRA + flow action expert, S11), "single" scene, 3,500 fine-tuning steps per run, 40 evaluation episodes each:
 
 | Demonstrations (LoRA rank 64) | 50 | 150 | 450 |
@@ -72,7 +72,7 @@ High (1) + clean (3) + low (2) = **over-specialization**: it memorized layouts. 
 
 Nudging the cubes by 3 cm halves success: the model learned *these 25 scenes*, not *how to pick*. The video shows the same layout succeeding, and then failing once the cubes have moved. The z replay error (24 mm, four times the x/y error) is worth a look too: the model is least certain about *how far down* to go. Exercise: plot it over the episode and check whether the failures happen during the descent.
 
-## 131 · Sim-to-real fine-tuning loops, in miniature (book §16.4)
+## 131 · Sim-to-real fine-tuning loops, in miniature
 The S05 pendulum showed that dynamics randomization doesn't automatically help a feedback policy. For **pixel policies**, visual variation is the gap that actually bites. The notebook collects TableTop data with per-episode random camera pose (±5 cm, ±4° FOV), lighting (×0.4–1.6) and table color, then evaluates both flow policies on the held-out S12 perturbation suite. Measured (30 episodes per perturbation, "single" scene, flow-matching policy, 500 demos each):
 
 | Training data | Nominal | Mean over visual perturbations | Worst perturbation |
@@ -94,7 +94,7 @@ Panda-trained flow policy → UR5e + Robotiq (different arm, gripper, wrist-came
 
 Zero-shot fails completely: the arm, gripper and wrist-camera image all differ. But the Panda pretraining isn't wasted. With the same 50 demonstrations, starting from the Panda policy beats starting from scratch by 38 points. That's the cross-embodiment argument behind Open X-Embodiment in one table. The video shows the Panda policy driving the UR5e before and after fine-tuning.
 
-**Recipe card for a new embodiment (book §16.5):** match the action space (EE deltas, frame, gripper sign) → record 50–200 diverse demos at the deployment rate → compute normalization stats → LoRA fine-tune (vision trainable) → replay check → evaluate with CIs and a perturbation suite → iterate on the failures.
+**Recipe card for a new embodiment:** match the action space (EE deltas, frame, gripper sign) → record 50–200 diverse demos at the deployment rate → compute normalization stats → LoRA fine-tune (vision trainable) → replay check → evaluate with CIs and a perturbation suite → iterate on the failures.
 
 ## Key takeaways
 - LoRA/QLoRA make billion-parameter fine-tuning feasible on one GPU; start from B = 0 and merge for deployment.
@@ -104,4 +104,3 @@ Zero-shot fails completely: the arm, gripper and wrist-camera image all differ. 
 ## References
 - Hu et al. 2022 (LoRA); Dettmers et al. 2023 (QLoRA)
 - Kim et al. 2024 (OpenVLA fine-tuning study); Shukor et al. 2025 (SmolVLA)
-- Kandapagari, *Action Models for Robot Learning*, Ch. 16, Exercises 16.x.1–16.x.4

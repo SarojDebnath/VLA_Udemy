@@ -31,7 +31,7 @@ Open, 7B, reproducible.
 - **Findings:** fine-tuning the vision encoder is crucial; it beats RT-2-X (55B) by 16.5 points on 29 tasks with 7× fewer parameters. LoRA fine-tuning on ~50 demos reaches full-fine-tune quality (S13). 4-bit quantization has no measurable success drop and fits a 15 GB T4 (our S00 notebook).
 - **Speed:** ~6 Hz on an RTX 4090 in bf16.
 
-**The three silent failures (notebook 100, book §2.4):**
+**The three silent failures (notebook 100):**
 | Bug | Symptom | Detectable by |
 |---|---|---|
 | Image not flipped (LIBERO renders upside down) | healthy-looking actions, never succeeds | elimination: the world the model sees doesn't exist |
@@ -68,4 +68,3 @@ A generalist policy *designed* for fine-tuning.
 - Brohan et al. 2022 (arXiv:2212.06817); Brohan et al. 2023 (arXiv:2307.15818)
 - Kim et al. 2024 (arXiv:2406.09246); Octo Model Team 2024 (arXiv:2405.12213)
 - Open X-Embodiment Collaboration 2023 (arXiv:2310.08864); Khazatsky et al. 2024 (DROID)
-- Kandapagari, *Action Models for Robot Learning*, Ch. 11–12

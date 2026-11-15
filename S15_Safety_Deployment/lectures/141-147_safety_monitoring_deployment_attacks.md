@@ -5,7 +5,7 @@
 
 ---
 
-## 141 · Safety as a layer, not a property (book §17.1)
+## 141 · Safety as a layer, not a property
 No learned policy can be *certified* safe: its behavior on unseen inputs isn't specified. Safety therefore comes from **layers around the policy** whose behavior *can* be stated:
 ```
 VLA policy ─► [shield: force / workspace / velocity / keep-out zones] ─► low-level controller (impedance, torque limits) ─► robot
@@ -49,7 +49,7 @@ Read it row by row:
 | grey table | 75% | 0.036 |
 
 **The spread does not rise under the perturbations that cause failures. If anything it drops.** This policy fails *confidently*: the visual change shifts all K samples together instead of scattering them. That's the honest lesson. Sample spread measures disagreement *within the model*, not distance from the training data, so it can miss exactly the out-of-distribution failures you care about. Complement it with input-side OOD detectors (feature-distance to the training set), task-progress checks and VLM monitors, and always validate any monitor's ROC on real failures before trusting it.
-- **VLM-as-monitor (Code-as-Monitor and related, book §17.2):** a VLM checks constraints and step-level success from images and can veto or trigger a recovery.
+- **VLM-as-monitor (Code-as-Monitor and related):** a VLM checks constraints and step-level success from images and can veto or trigger a recovery.
 
 ## 145 · Logging, alerting, rollback
 - Log every episode: inputs digest, actions, interventions, outcome, timing (JSONL is enough to start).
@@ -59,7 +59,7 @@ Read it row by row:
 
 **Measured (notebook 145):** current policy = expert with 4 mm hand noise, candidate = 12 mm noise, 20% canary traffic. The rule fired a **rollback at episode 20**, after only **5** canary episodes. Over the full simulated log (which keeps running for comparison), the candidate reached 7/16 (44%, and slow: 178 steps/episode) versus 64/64 for the current policy. The stopping rule caught it after a third of that exposure.
 
-## 146 · What we still can't certify: attacks at test time (book §17.5)
+## 146 · What we still can't certify: attacks at test time
 - **Sensor perturbations:** pixel noise and lighting changes (the S12 suite).
 - **Adversarial patches:** a small optimized sticker in the scene, learned by gradient ascent on the policy's action deviation, can derail a policy that ignores a *random* patch of the same size and place (notebook 146).
 
@@ -75,7 +75,7 @@ Read it row by row:
 - Attacks on VLA language and reasoning: adversarial instructions, perturbed chain-of-thought, typographic attacks on the VLM.
 Defenses: augmentation (random shift, color jitter), adversarial training, input sanitization, ensembles, and the shield, which bounds the consequences regardless of the cause.
 
-## 147 · Training-time attacks: poisoning and backdoors (book §17.7)
+## 147 · Training-time attacks: poisoning and backdoors
 - **Data poisoning:** a small fraction of manipulated demonstrations degrades or biases behavior. Robot datasets are crowdsourced (LeRobot Hub, OXE), so provenance matters.
 - **Backdoors** (BackdoorVLA, AttackVLA and related work): demonstrations containing a visual *trigger* (a sticker, an object) paired with malicious actions. The policy behaves normally until the trigger appears; reports show success with only a few percent poisoned data.
 - **Mitigations:** dataset provenance and hashing, outlier detection on (observation, action) pairs, fine-tuning on trusted data, trigger-scanning evaluation suites, and the runtime layers above.
@@ -86,6 +86,5 @@ Defenses: augmentation (random shift, color jitter), adversarial training, input
 - Test-time and training-time attacks are real; robustness has to be measured, not assumed.
 
 ## References
-- Kandapagari, *Action Models for Robot Learning*, Ch. 17, Exercises 17.x.1–17.x.3
 - Alshiekh et al. 2018 (safe RL via shielding); Brown et al. 2017 (adversarial patch)
 - Code-as-Monitor (2025); BackdoorVLA / AttackVLA (2025)

@@ -6,7 +6,7 @@
 ---
 
 ## 105 · The trouble with discrete action tokens
-Three costs that cluster on exactly the tasks we care about (book §13.1):
+Three costs that cluster on exactly the tasks we care about:
 1. **Resolution:** 256 bins per dimension give a precision floor. Fine for sliding a can; not for seating a peg or tensioning cloth.
 2. **Sequence length:** a 1-second chunk at 50 Hz × 7 dims = 350 tokens, decoded one at a time.
 3. **Latency:** every token is a full pass of a billion-parameter decoder. OpenVLA reaches ~6 Hz; dexterous bimanual work needs ~50 Hz.
@@ -63,4 +63,3 @@ There's honest headroom left: 53% from one camera and 450 demos is below S08's 1
 ## References
 - Black et al. 2024, *π0* (arXiv:2410.24164); Pertsch et al. 2025 (π0-FAST)
 - Shukor et al. 2025, *SmolVLA*; NVIDIA 2025, *GR00T N1*
-- Kandapagari, *Action Models for Robot Learning*, §13.1–13.3

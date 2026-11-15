@@ -31,7 +31,7 @@ Make $B$, $C$ and Δ **functions of the input** $x_t$: the model chooses what to
 - Mamba-based diffusion-policy backbones and long-horizon memory policies.
 - Hybrids (attention for local detail, SSM for long memory) are common in 2025–2026 models.
 
-## 5. The bridge to foundation action models (book §8.5)
+## 5. The bridge to foundation action models
 Decision Transformer showed that "control = sequence modeling" works with plain supervised learning. Foundation action models scale that idea:
 1. **Tokens:** images and language (pretrained encoders and LLMs) replace low-dimensional states.
 2. **Conditioning:** language instructions replace return-to-go.
@@ -47,4 +47,3 @@ Return conditioning mostly disappeared because demonstrations are near-expert an
 
 ## References
 - Gu, Goel & Ré 2022 (S4); Gu & Dao 2023 (Mamba); Liu et al. 2024 (RoboMamba)
-- Kandapagari, *Action Models for Robot Learning*, §8.5

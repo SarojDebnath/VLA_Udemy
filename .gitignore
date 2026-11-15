@@ -5,8 +5,8 @@ S*/checkpoints/
 S*/outputs/
 S*/videos/
 S00_Setup/video/
-checkpoints/
-results/
+/checkpoints/
+/results/
 MUJOCO_LOG.TXT
 dist/
 

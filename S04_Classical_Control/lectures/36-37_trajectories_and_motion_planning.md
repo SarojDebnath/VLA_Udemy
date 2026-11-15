@@ -54,4 +54,3 @@ VLAs replace planners for short, contact-rich, semantically specified motions. P
 - LaValle, *Planning Algorithms* (2006), Ch. 5
 - Kuffner & LaValle 2000, *RRT-Connect*
 - Lynch & Park, *Modern Robotics*, Ch. 9–10
-- Kandapagari, *Action Models for Robot Learning*, §4.2

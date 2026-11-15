@@ -1,0 +1,20 @@
+{
+ "nominal data": {
+  "nominal": 1.0,
+  "camera +3 cm": 0.9666666666666667,
+  "camera +6 cm / lower": 0.9333333333333333,
+  "dim light (x0.5)": 0.8333333333333334,
+  "bright light (x1.6)": 0.9,
+  "grey table": 0.7333333333333333,
+  "slippery cubes (\u03bc=0.5)": 0.9666666666666667
+ },
+ "visually randomized data": {
+  "nominal": 1.0,
+  "camera +3 cm": 1.0,
+  "camera +6 cm / lower": 0.9,
+  "dim light (x0.5)": 1.0,
+  "bright light (x1.6)": 0.8666666666666667,
+  "grey table": 0.8666666666666667,
+  "slippery cubes (\u03bc=0.5)": 0.9333333333333333
+ }
+}

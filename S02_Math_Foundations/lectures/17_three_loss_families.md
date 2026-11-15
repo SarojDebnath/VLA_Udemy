@@ -54,4 +54,3 @@ Sections S08, S10 and S11 build each of these heads on TableTop and compare them
 ## References
 - Ho et al. 2020, *DDPM*; Chi et al. 2023, *Diffusion Policy*
 - Brohan et al. 2022, *RT-1*; Kim et al. 2024, *OpenVLA*
-- Kandapagari, *Action Models for Robot Learning*, §3.4, Exercise 3.x.3

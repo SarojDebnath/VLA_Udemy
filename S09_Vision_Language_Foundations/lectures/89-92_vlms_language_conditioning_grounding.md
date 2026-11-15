@@ -51,7 +51,7 @@ A meaningless instruction ("do something") is a useful control: whatever success
 
 **Measured (notebook 91, FiLM policy):** the instructed cube is the one that moves in **100%** of trials (a perfectly diagonal confusion matrix), with 100% task success. With "do something" the policy succeeds **7%** of the time: it really is reading the words. The video shows one scene, one policy and two different instructions, and the robot goes for a different cube each time.
 
-What CLIP-style alignment lacks for acting (book §11.1):
+What CLIP-style alignment lacks for acting:
 - **Time:** it's a single static image, with no notion of progress.
 - **Force and contact:** invisible in pixels.
 - **Action:** an embedding isn't a motor command; the policy must learn the mapping from demonstrations.
@@ -64,4 +64,3 @@ What CLIP-style alignment lacks for acting (book §11.1):
 ## References
 - Perez et al. 2018 (FiLM); Jang et al. 2021 (BC-Z); Brohan et al. 2022 (RT-1)
 - Marafioti et al. 2025 (SmolVLM); Beyer et al. 2024 (PaliGemma)
-- Kandapagari, *Action Models for Robot Learning*, §11.1–11.2

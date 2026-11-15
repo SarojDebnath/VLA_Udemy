@@ -9,7 +9,7 @@
 - **π0-FAST:** the same backbone with FAST action tokens (autoregressive); trains faster, but inference is slower than flow.
 - **π0.5 (2025): open-world generalization.** Co-trained on heterogeneous data (multiple robots, web data, high-level subtask labels, verbal instructions). It predicts a **high-level subtask in text** and then low-level actions with the flow expert, so it can clean an *unseen* kitchen.
 - **π0.6 / π*0.6:** RL from experience (RECAP): learn from the policy's own deployments with value-based advantage conditioning and corrections; large gains in throughput and robustness on long tasks (espresso, laundry, boxes).
-- **π0.7:** steerable behavior with richer conditioning (book §13.4).
+- **π0.7:** steerable behavior with richer conditioning.
 The trend: the same architecture, with better data mixtures, subtask reasoning and post-training on experience.
 
 ## 112 · Dual-system architectures
@@ -77,4 +77,3 @@ Lessons:
 ## References
 - Physical Intelligence 2025 (π0.5, π*0.6, real-time chunking); Figure 2025 (Helix); NVIDIA 2025 (GR00T N1); Google DeepMind 2025 (Gemini Robotics)
 - Shukor et al. 2025 (SmolVLA, async inference)
-- Kandapagari, *Action Models for Robot Learning*, Ch. 13.4, Ch. 14, Exercises 14.x

@@ -38,7 +38,7 @@ The agent optimizes **what you pay for**, not what you want.
 |---|---|---|
 | +1 at goal | 0.74 | correct but slow to learn |
 | −0.1 × distance every step | 0.04 | **reward hacking:** falling into a hole *ends* the stream of penalties, so the agent learns to die quickly (episode length ≈ 5 steps) |
-| +0.1 when near the goal | 0.75 here | can induce hovering (book exercise 5.x.2); outcome depends on details |
+| +0.1 when near the goal | 0.75 here | can induce hovering; outcome depends on details |
 | potential-based shaping $F = \gamma\Phi(s') - \Phi(s)$ | 0.72 | **provably preserves the optimal policy** (Ng, Harada, Russell 1999); in our runs it needed ~20k episodes vs ~6k for the plain reward, so it changes learning speed, here for the worse |
 
 Why potential-based shaping is safe: along any trajectory the shaping terms telescope, $\sum_t \gamma^t F_t = \gamma^T\Phi(s_T) - \Phi(s_0)$, so they can't change which policy is optimal. It's equivalent to initializing Q with Φ (Wiewiora 2003), which can speed up *or* slow down learning.
@@ -53,4 +53,3 @@ Why potential-based shaping is safe: along any trajectory the shaping terms tele
 ## References
 - Sutton & Barto, Ch. 4, 6
 - Ng, Harada & Russell 1999, *Policy invariance under reward transformations*
-- Kandapagari, *Action Models for Robot Learning*, §5.2–5.4, Exercises 5.x.1–5.x.3

@@ -53,7 +53,7 @@ Measured on the "single" scene (one cube + a tray, 450 demos, front camera), 30 
 - This is the field's history in one notebook. OpenVLA made the token recipe work with 7B parameters and ~970k episodes; FAST compresses actions into better tokens; π0, SmolVLA and GR00T stopped asking the language model for numbers and added a continuous action expert. S11 notebook 108 does exactly that, with the **same SmolVLM backbone and the same data: 0% → 53%**.
 
 ## 104 · Scaling in miniature
-Hold compute fixed (600 steps) and vary the number of demonstrations (10 → 180). Held-out cross-entropy keeps falling with more *diverse* data, which is the small-scale version of the data-scaling argument behind Open X-Embodiment (book §11.5): below a diversity floor the model memorizes; above it, it generalizes.
+Hold compute fixed (600 steps) and vary the number of demonstrations (10 → 180). Held-out cross-entropy keeps falling with more *diverse* data, which is the small-scale version of the data-scaling argument behind Open X-Embodiment: below a diversity floor the model memorizes; above it, it generalizes.
 
 **Measured (same 600 steps of compute each):**
 | Demos | 10 | 30 | 90 | 180 |
@@ -65,4 +65,3 @@ The loss keeps falling smoothly with more data while token accuracy saturates ar
 
 ## References
 - Kim et al. 2024 (OpenVLA); Marafioti et al. 2025 (SmolVLM); Hu et al. 2022 (LoRA)
-- Kandapagari, *Action Models for Robot Learning*, §11.5, §12.2, Exercise 12.x.1

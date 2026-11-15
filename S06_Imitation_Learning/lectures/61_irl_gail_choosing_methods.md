@@ -27,7 +27,7 @@ The policy's reward is $-\log(1-D(s,a))$. This matches **occupancy measures** (s
 - Large, diverse demonstration sets plus expressive generative policies (diffusion, flow, autoregressive tokens) get much of the benefit with plain supervised learning.
 - Learned rewards reappear in **RL fine-tuning of VLAs** (S16): success detectors and VLM-based reward models are IRL-flavored ideas.
 
-## 4. Choosing a method (book §6.5)
+## 4. Choosing a method
 | Situation | Choose |
 |---|---|
 | Many good demonstrations, short horizon | **BC** (with chunking, diffusion or flow heads) |
@@ -44,4 +44,3 @@ The policy's reward is $-\log(1-D(s,a))$. This matches **occupancy measures** (s
 
 ## References
 - Abbeel & Ng 2004; Ziebart et al. 2008; Ho & Ermon 2016 (GAIL); Fu et al. 2018 (AIRL)
-- Kandapagari, *Action Models for Robot Learning*, §6.4–6.5

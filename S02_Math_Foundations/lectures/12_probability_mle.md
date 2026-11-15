@@ -51,4 +51,3 @@ With a multimodal $\pi$, you **sample** an action (or take the argmax mode), nev
 
 ## References
 - Bishop, *Pattern Recognition and Machine Learning*, Ch. 1–2
-- Kandapagari, *Action Models for Robot Learning*, §3.2, §3.4, Appendix B

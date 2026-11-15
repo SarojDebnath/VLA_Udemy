@@ -71,4 +71,3 @@ Below about 4 steps the sample is still mostly noise, and the robot fails comple
 ## References
 - Ho et al. 2020 (DDPM); Song et al. 2021 (DDIM, score SDE); Ho & Salimans 2022 (CFG)
 - Chi et al. 2023, *Diffusion Policy*
-- Kandapagari, *Action Models for Robot Learning*, §10.1–10.2

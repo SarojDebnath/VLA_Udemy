@@ -59,4 +59,3 @@ Results (notebook 48, CPU): cart-pole reaches a 475+ average return after ~35k e
 ## References
 - Williams 1992, *REINFORCE*; Sutton et al. 2000, *Policy Gradient Methods*
 - Schulman et al. 2016, *GAE*; Schulman et al. 2017, *PPO*
-- Kandapagari, *Action Models for Robot Learning*, §7.2–7.3, Exercise 7.x.1

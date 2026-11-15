@@ -1,0 +1,23 @@
+{
+ "zero-shot Panda policy": {
+  "success": 0.0,
+  "ci": [
+   -6.938893903907228e-18,
+   0.08762160119728665
+  ]
+ },
+ "UR5e from scratch (50 demos)": {
+  "success": 0.5,
+  "ci": [
+   0.3519952693346538,
+   0.6480047306653463
+  ]
+ },
+ "Panda policy fine-tuned on 50 UR5e demos": {
+  "success": 0.875,
+  "ci": [
+   0.738878801611489,
+   0.945404997490546
+  ]
+ }
+}

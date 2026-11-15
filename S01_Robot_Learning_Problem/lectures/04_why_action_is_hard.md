@@ -63,6 +63,5 @@ A learned policy *is* a feedback controller: it re-observes the world each step.
 - A VLA is a learned feedback controller whose "model" is its training distribution.
 
 ## References
-- Kandapagari, *Action Models for Robot Learning*, §1.1, §4.3
 - MuJoCo docs, *Computation → Inverse dynamics* (`mj_inverse`)
 - Lynch & Park, *Modern Robotics*, Ch. 11 (robot control)

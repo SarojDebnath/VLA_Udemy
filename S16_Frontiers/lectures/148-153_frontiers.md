@@ -5,7 +5,7 @@
 
 ---
 
-## 148 · RL post-training of pretrained VLAs (book §16.8, pending in the book)
+## 148 · RL post-training of pretrained VLAs
 Imitation caps a policy at the quality and coverage of its demonstrations. RL on the policy's own rollouts fixes its *own* mistakes (the DAgger idea, with a reward instead of an expert).
 - **Discrete-token VLAs** (OpenVLA): PPO/GRPO directly on action-token log-probabilities (VLA-RL, RIPT-VLA, RLinf-VLA). Sparse success rewards, often in simulation, with large gains on LIBERO-style suites.
 - **Flow/diffusion VLAs** (π0): exact log-likelihoods are intractable. Options:
@@ -28,7 +28,40 @@ Two honest lessons: RL post-training *does* lift a small-data BC policy, but wit
 - **Embodied chain-of-thought (ECoT):** the VLA writes plan, subtask, object boxes and gripper position in text before its action tokens. More interpretable, and better on novel scenes, at the cost of latency.
 - **Latent reasoning / CoT-dropout:** train with reasoning, run without it (or with short latent tokens).
 - **Gemini Robotics-ER / "Embodied Thinking":** a reasoning VLM produces pointing, trajectories and success checks for a downstream controller.
-- **Does it actually reason?** Stress tests (BeTTER) show reasoning traces that don't causally drive the actions; faithfulness critics check whether the stated plan matches the behavior (book §18.7). Treat text reasoning as a useful interface, not proof of understanding.
+- **Does it actually reason?** Stress tests (BeTTER) show reasoning traces that don't causally drive the actions; faithfulness critics check whether the stated plan matches the behavior. Treat text reasoning as a useful interface, not proof of understanding.
+
+### 150 notebook · A reasoning VLA that drives: NVIDIA Alpamayo 2 Edge
+`150_alpamayo_reasoning_driver.ipynb` · video `outputs/150_alpamayo_in_mujoco.mp4` (+ a 1.3× LinkedIn cut) · kernel **Python (alpamayo)**, Linux GPU ≥ 16 GB.
+
+**The model (measured on load):** 2.65B parameters, bf16: a 2.45B vision-language backbone (Cosmos 3 Edge: SigLIP2 + Nemotron LM) and a **0.2B flow-matching action expert**.
+- **In:** 6 cameras (cross-left/right 120°, front-wide 120°, rear-left/right 70°, front-tele 30°), 22 frames over the last 2 s, 20 past poses, a navigation instruction ("Turn right in 30m").
+- **Out:** per candidate, a chain-of-causation sentence (or `<NOMINAL>` when nothing needs explaining: *adaptive reasoning*) and a 6.4 s trajectory (64 poses, 10 Hz) from acceleration and curvature, as in our C8 model.
+- **NVIDIA's numbers:** 15.15 km per at-fault incident (AlpaSim closed loop), minADE₆ 0.52 m at 5 s (real data). Weights under OpenMDW-1.1, code Apache-2.0.
+
+**Zero-shot in our MuJoCo city:** we mount Alpamayo's camera rig on the C8 ego car (pinhole cameras), keep a 2 s buffer, and build exactly the input dict NVIDIA's real-data loader builds. Nothing retrained.
+
+| Situation | What it said (candidate 1) |
+|---|---|
+| green light, "Turn left in 20m" | "Proceed forward and turn left at the intersection to follow our route, as the traffic signal is green and our path is clear." (all 6 turn left) |
+| light just turned yellow at 32 km/h | "Proceed straight through the intersection… as the traffic light has turned yellow and we cannot stop safely before the stop line." |
+| jaywalker at a red light | "Continue decelerating to stop before the crosswalk for the red traffic light and the pedestrian crossing our path." |
+| free question: "How should the ego vehicle drive?" | "Stop and wait behind the pedestrian in the crosswalk, as the traffic light ahead is red and the pedestrian is crossing our path." |
+
+**Closed loop (it drives): 0/5.** 2 off-road, 3 collisions. The top-down plot shows why: the car tracks Alpamayo's trajectory faithfully, but its **left turns swing 4–6 m wide**, sized for real streets seen through real (fisheye) lenses, not our 10 m road and pinhole renders. It reads the scene; its metric geometry doesn't transfer. Sim-to-real in reverse.
+
+**Shadow mode (the expert drives, Alpamayo plans alongside): 509 plans scored against what the car really did over 3 s.**
+
+| | minADE₆ @ 3 s | candidate-1 ADE | stop/go agreement |
+|---|---|---|---|
+| all scenarios | **0.35 m** | 0.60 m | **89%** (93% while moving, **81% while stopped**) |
+
+Good open-loop numbers, failed closed loop: the same lesson as C8. And a 19% "go" while the expert waits is exactly what causes crashes when it drives.
+
+**Faithfulness check (lecture 150):** of 554 plans, 520 had reasoning text and 434 mentioned a light. When it names a colour, it matches our approach's light (within 45 m): "green" **63%** of 209, "red" **76%** of 249, "yellow" **32%** of 40. Part of the gap is timing ("has turned green" just before it does) and other signals in view, but the takeaway stands: the text is a useful interface, not ground truth.
+
+**Latency:** median **1.48 s** per call (6 candidates with reasoning, 10 flow steps), p90 2.03 s, RTX PRO 6000, PyTorch SDPA without CUDA graphs. Real cars replan at ~10 Hz: hence NVIDIA's accelerated path and DRIVE Thor deployment.
+
+**Real NVIDIA clips** (part 2 of the notebook) need the gated `nvidia/PhysicalAI-Autonomous-Vehicles` dataset: accept its terms on Hugging Face and `hf auth login`; otherwise the notebook skips that part.
 
 ## 151 · Cross-embodiment and whole-body control (notebook)
 The Unitree G1: 29 actuated joints plus a 6-DoF floating base. Notebook findings:
@@ -45,7 +78,7 @@ A VLA emitting arm targets at a few Hz cannot keep a humanoid upright. That's wh
 - **Tactile sensing:** vision can't see contact forces; tactile world models and policies for insertion and in-hand manipulation.
 
 ## 153 · How to keep up and contribute
-1. Pick a problem that matches your resources (book Exercise 18.x.1): sim-only → evaluation, tokenizers, RL fine-tuning; one robot → data and fine-tuning recipes; a fleet → scaling.
+1. Pick a problem that matches your resources: sim-only → evaluation, tokenizers, RL fine-tuning; one robot → data and fine-tuning recipes; a fleet → scaling.
 2. Read papers with the three-slot table (lecture 07) and look for the evaluation details (seeds, n, CIs).
 3. Reproduce before you extend: our TableTop + `vlacourse` harness is a template.
 4. Share data in LeRobot format, report Wilson intervals, release evaluation code.
@@ -58,5 +91,4 @@ A VLA emitting arm targets at a few Hz cannot keep a humanoid upright. That's wh
 - Humanoids need fast whole-body controllers under the VLA.
 
 ## References
-- Kandapagari, *Action Models for Robot Learning*, Ch. 18, §16.7–16.8
 - Zhang et al. 2025 (ReinFlow); Ren et al. 2024 (DPPO); Zawalski et al. 2024 (ECoT); Physical Intelligence 2025 (π*0.6)

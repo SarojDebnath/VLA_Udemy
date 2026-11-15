@@ -65,7 +65,7 @@ Committing to long chunks survived the bump **better** than re-planning every st
 
 So "re-plan more often" is not automatically "more robust". Execute 8 of 16 (Diffusion Policy's default) costs 16× fewer network calls than k = 1 and is the better trade here. The video shows the bumped episode with k = 1 and k = 16 side by side.
 
-## 6. Choosing an action head (book §10.4–10.5)
+## 6. Choosing an action head
 | Head | Multimodal | Precision | Inference cost | Used in |
 |---|---|---|---|---|
 | Regression (single step) | ✗ | high when unimodal | 1 pass | classic BC |
@@ -104,4 +104,3 @@ The final video runs all five heads on the same episode, side by side.
 ## References
 - Lipman et al. 2023 (Flow Matching); Liu, Gong & Liu 2023 (Rectified Flow)
 - Black et al. 2024 (π0)
-- Kandapagari, *Action Models for Robot Learning*, §10.3–10.5, §13.3, Exercises 10.x and 13.x

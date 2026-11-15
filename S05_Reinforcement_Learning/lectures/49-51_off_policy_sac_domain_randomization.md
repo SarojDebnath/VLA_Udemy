@@ -52,4 +52,3 @@ What to randomize for manipulation (S13): object mass and friction, actuator gai
 ## References
 - Lillicrap et al. 2016 (DDPG); Fujimoto et al. 2018 (TD3); Haarnoja et al. 2018 (SAC)
 - Tobin et al. 2017; Peng et al. 2018 (dynamics randomization)
-- Kandapagari, *Action Models for Robot Learning*, §7.4–7.5, Exercises 7.x.2–7.x.3

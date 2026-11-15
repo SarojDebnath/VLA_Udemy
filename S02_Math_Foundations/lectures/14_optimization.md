@@ -43,4 +43,3 @@ SGD noise scales roughly as $\eta/B$. Doubling the batch size usually allows a s
 ## References
 - Kingma & Ba 2015, *Adam*; Loshchilov & Hutter 2019, *AdamW*
 - Goodfellow, Bengio, Courville, *Deep Learning*, Ch. 8
-- Kandapagari, *Action Models for Robot Learning*, §3.3, §3.5

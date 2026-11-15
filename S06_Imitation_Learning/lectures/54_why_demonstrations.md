@@ -33,7 +33,7 @@ with ℓ = MSE (Gaussian MLE), cross-entropy (binned actions), or a denoising lo
 | Scripted / planner expert | free, unlimited, perfect labels | unnatural motion, needs privileged state | our data engine, MimicGen |
 | Human video (no robot) | massive scale | no action labels, embodiment gap | V-JEPA 2, egocentric datasets (S16) |
 
-## 4. What makes good demonstrations (book §16.2)
+## 4. What makes good demonstrations
 - **Coverage beats volume:** vary object positions, lighting and approaches; 50 diverse demos beat 200 copies.
 - **Consistent conventions:** same action frame, gripper sign and control rate everywhere.
 - **Recovery behavior:** include corrections (DART, DAgger) or the policy never learns to recover.
@@ -51,4 +51,3 @@ with ℓ = MSE (Gaussian MLE), cross-entropy (binned actions), or a denoising lo
 ## References
 - Argall et al. 2009, *A survey of robot learning from demonstration*
 - Zhao et al. 2023 (ALOHA/ACT); Khazatsky et al. 2024 (DROID)
-- Kandapagari, *Action Models for Robot Learning*, §6.1–6.2, §16.2

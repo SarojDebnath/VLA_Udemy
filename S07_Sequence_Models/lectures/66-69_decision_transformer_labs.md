@@ -72,4 +72,3 @@ Two failure modes bracket a sweet spot:
 ## References
 - Chen et al. 2021, *Decision Transformer*; Brandfonbrener et al. 2022, *When does return-conditioned supervised learning work for offline RL?*
 - Brohan et al. 2023 (RT-2); Kim et al. 2024 (OpenVLA): 256-bin action tokens
-- Kandapagari, *Action Models for Robot Learning*, §8.2–8.4

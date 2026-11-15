@@ -54,5 +54,4 @@ For each paper, read the abstract and figures only (20 minutes) and fill in:
 - The 7-cell table turns any paper into a comparable summary.
 
 ## References
-- Kandapagari, *Action Models for Robot Learning*, §1.4 and Exercise 1.x
 - Sapkota et al. 2025, *Vision-Language-Action Models: Concepts, Progress, Applications and Challenges* (survey)

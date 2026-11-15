@@ -120,8 +120,8 @@ Tier: 🟢 laptop/CPU · 🟡 NVIDIA GPU or Colab · ☁️ Colab only. Notes ar
 | **S13 Fine-tuning for your robot** | LoRA from scratch, demo coverage, SmolVLA and OpenVLA-7B fine-tuning, ablations, over-specialization, visual DR. **Project 9:** new embodiment | 124–126 🟢, 127–128 ☁️, 129–132 🟡 | 🟡 |
 | **S14 World models** | MPPI with MuJoCo, mini-Dreamer, planning horizon vs model error, stochastic latents | 134–138 | 🟢/🟡 |
 | **S15 Safety and deployment** | safety shield, runtime monitor, canary rollout, adversarial patch | 142–146 | 🟢/🟡 |
-| **S16 Frontiers** | RL fine-tuning of a flow policy, whole-body humanoid control | 149, 151 | 🟡 |
-| **S17 Capstones** | choose at least one: C1 language sorter, C2 ALOHA ACT, C3 SO-101 starter, C4 G1 humanoid VLA, C5 tower builder, C6 data engine, C7 mobile fetch. Briefs in `lectures/capstone_briefs.md` | C1–C7 | 🟡 |
+| **S16 Frontiers** | RL fine-tuning of a flow policy, a reasoning driving VLA (NVIDIA Alpamayo 2 Edge, on real clips and in our MuJoCo city), whole-body humanoid control | 149, 150 (own env, ≥ 16 GB GPU), 151 | 🟡 |
+| **S17 Capstones** | choose at least one: C1 language sorter, C2 ALOHA ACT, C3 SO-101 starter, C4 G1 humanoid VLA, C5 tower builder, C6 data engine, C7 mobile fetch, C8 a self-driving car in a MuJoCo city. Briefs in `lectures/capstone_briefs.md` | C1–C8 | 🟡 |
 
 **Dependencies between sections.** These notebooks load models trained earlier (or downloaded):
 | Notebook | Needs |
@@ -162,6 +162,13 @@ python -m venv ~/.pg
 ~/.pg/bin/python -m ipykernel install --user --name pg --display-name "Python (playground)"
 ```
 Open the notebook with the kernel **Python (playground)**.
+
+### S16 150 · NVIDIA Alpamayo 2 Edge
+Needs NVIDIA's pinned environment (PyTorch 2.8, Transformers 5.17) on Linux with an NVIDIA GPU of ≥ 16 GB and bf16
+(Colab: L4 or A100). The setup commands are in the notebook's first cell; they also add MuJoCo and the course library,
+so one kernel (**Python (alpamayo)**) runs both NVIDIA's model and our city. Part 2 uses real NVIDIA driving clips:
+accept the terms of `nvidia/PhysicalAI-Autonomous-Vehicles` on Hugging Face and run `hf auth login`, or that part is
+skipped.
 
 ### S12 117 · LeRobot
 LeRobot pins its own PyTorch version, so it gets its own environment:

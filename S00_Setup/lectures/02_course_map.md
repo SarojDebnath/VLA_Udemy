@@ -68,6 +68,7 @@ Because everything is measured the same way, every claim in the theory lectures 
 | Unitree Go1 / Go2 | RL walking in MJX (S05 53), classical trot (S04 42d) |
 | Unitree G1 humanoid | LQR balance (S04 42c), RL balance (S05 53b), whole-body (S16 151), humanoid VLA with Dex3 hands (C4) |
 | Shadow / LEAP hands | Menagerie tour (S00 03) |
+| A self-driving car (built in code, in a procedural MuJoCo city) | mini driving VLA (C8); NVIDIA Alpamayo 2 Edge zero-shot and in shadow mode (S16 150) |
 
 ## 7. Compute tiers
 - 🟢 laptop / CPU: math, MuJoCo, classical control, RL toys, BC, ACT/diffusion on small tasks.
@@ -85,4 +86,3 @@ Because everything is measured the same way, every claim in the theory lectures 
 - Kim et al. 2024, *OpenVLA* (arXiv:2406.09246)
 - Brohan et al. 2022/2023, *RT-1* (arXiv:2212.06817), *RT-2* (arXiv:2307.15818)
 - Black et al. 2024, *π0* (arXiv:2410.24164)
-- Kandapagari, *Action Models for Robot Learning*, Ch. 1–2

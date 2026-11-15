@@ -63,4 +63,3 @@ Why it matters for learned policies:
 ## References
 - Khatib 1987, *A unified approach for motion and force control of robot manipulators: the operational space formulation*
 - Hogan 1985, *Impedance Control*
-- Kandapagari, *Action Models for Robot Learning*, §4.3

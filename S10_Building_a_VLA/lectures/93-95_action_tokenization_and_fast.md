@@ -6,7 +6,7 @@
 ---
 
 ## 1. Why tokenize actions at all?
-A language model outputs a categorical distribution over its vocabulary. To reuse it as an action head with no new architecture and the same cross-entropy loss, each continuous action dimension becomes a **token**. RT-1, RT-2 and OpenVLA all do this. It's "a small idea with large consequences" (book §11.3).
+A language model outputs a categorical distribution over its vocabulary. To reuse it as an action head with no new architecture and the same cross-entropy loss, each continuous action dimension becomes a **token**. RT-1, RT-2 and OpenVLA all do this. It's a small idea with large consequences.
 
 ## 2. Uniform per-dimension binning
 For dimension d with range $[l_d, h_d]$ and $K$ bins:
@@ -27,7 +27,7 @@ $$k = \Big\lfloor K\cdot\mathrm{clip}\Big(\frac{a_d - l_d}{h_d - l_d}, 0, 1-\var
   S07 notebook 69 shows the behavioral consequence: on a small dataset, 16 bins beat 256.
 - **Distribution shift:** a tokenizer fit on slow motions clips fast ones to the end bins, which silently caps the robot's speed. Measured: fit on slow episodes, the error is 0.14 mm in-distribution but **0.55 mm on fast episodes, with 8.6% of fast translation values clipped**. Fit ranges on data that covers the deployment behavior.
 
-## 4. The deeper costs (book §13.1)
+## 4. The deeper costs
 1. **Resolution floor:** precision is capped by the bin width.
 2. **Sequence length:** 7 dims × H steps of tokens. A 50-step chunk would be 350 autoregressive tokens.
 3. **Latency:** each token is a full forward pass of a billion-parameter decoder. OpenVLA manages ~6 Hz on an RTX 4090.
@@ -56,4 +56,3 @@ The error halves each time the scale doubles, at a cost of about 7 extra tokens.
 
 ## References
 - Brohan et al. 2022 (RT-1); Kim et al. 2024 (OpenVLA); Pertsch et al. 2025 (FAST, arXiv:2501.09747)
-- Kandapagari, *Action Models for Robot Learning*, §11.3, §13.1, Exercises 11.x.1–11.x.4

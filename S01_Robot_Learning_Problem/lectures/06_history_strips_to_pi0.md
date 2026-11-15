@@ -62,4 +62,3 @@ Each era didn't replace the previous one; it was layered on top. A 2026 humanoid
 ## References
 - Fikes & Nilsson 1971; LaValle 1998; Pomerleau 1988; Mnih et al. 2015
 - Brohan et al. 2022 (RT-1), 2023 (RT-2); Kim et al. 2024 (OpenVLA); Black et al. 2024 (π0)
-- Kandapagari, *Action Models for Robot Learning*, §1.3

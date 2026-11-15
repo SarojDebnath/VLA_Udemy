@@ -51,4 +51,3 @@ Reconstruction minus KL. This is the training objective of ACT's CVAE (S08) and 
 
 ## References
 - Cover & Thomas, *Elements of Information Theory*, Ch. 2
-- Kandapagari, *Action Models for Robot Learning*, §3.2, Appendix B

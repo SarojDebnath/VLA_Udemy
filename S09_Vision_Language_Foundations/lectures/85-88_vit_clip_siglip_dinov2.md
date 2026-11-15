@@ -26,7 +26,7 @@ No softmax over the batch → no all-gather of the full similarity matrix, bette
 ## 4. Pretrained CLIP on robot scenes (notebook 87)
 - Scene-level recognition works out of the box ("a robot arm and colored blocks on a table").
 - Object color from segmentation crops works for most objects.
-- **State and relations are weak:** "is the red cube inside the yellow tray?" is close to chance. CLIP aligns *what* is in the image with words; it doesn't encode *where*, *how* or *whether a task is done*. Hence the book's caution: **alignment is not grounding in action.**
+- **State and relations are weak:** "is the red cube inside the yellow tray?" is close to chance. CLIP aligns *what* is in the image with words; it doesn't encode *where*, *how* or *whether a task is done*. Hence the caution: **alignment is not grounding in action.**
 
 ## 5. DINOv2 vs SigLIP (notebook 88)
 Linear probes on frozen features from 1,000 TableTop scenes:
@@ -43,4 +43,3 @@ Self-supervised DINOv2 (trained to match views of the same image) keeps fine spa
 ## References
 - Dosovitskiy et al. 2021 (ViT); Radford et al. 2021 (CLIP); Zhai et al. 2023 (SigLIP); Oquab et al. 2024 (DINOv2)
 - Kim et al. 2024 (OpenVLA)
-- Kandapagari, *Action Models for Robot Learning*, §11.1, §12.2

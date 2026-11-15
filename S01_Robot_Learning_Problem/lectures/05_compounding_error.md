@@ -62,4 +62,3 @@ The recorded actions are perfect for the world they were recorded in, and wrong 
 - Ross & Bagnell 2010, *Efficient Reductions for Imitation Learning*
 - Ross, Gordon & Bagnell 2011, *DAgger* (AISTATS)
 - Laskey et al. 2017, *DART: Noise Injection for Robust Imitation Learning*
-- Kandapagari, *Action Models for Robot Learning*, §1.1, §6.3

@@ -1,0 +1,51 @@
+{
+ "policies": {
+  "ACT | temporal ensembling": {
+   "success": 0.275,
+   "ci": [
+    0.16108016247667337,
+    0.42834955806210573
+   ],
+   "went_for_named": 0.85
+  },
+  "ACT | re-plan every 4 steps": {
+   "success": 0.35,
+   "ci": [
+    0.2213452887317629,
+    0.5049411916274231
+   ],
+   "went_for_named": 0.825
+  },
+  "FiLM | temporal ensembling": {
+   "success": 0.375,
+   "ci": [
+    0.24222979167233266,
+    0.5296756086269889
+   ],
+   "went_for_named": 1.0
+  },
+  "FiLM | re-plan every 4 steps": {
+   "success": 0.575,
+   "ci": [
+    0.42195068541991065,
+    0.7149060744004962
+   ],
+   "went_for_named": 0.975
+  }
+ },
+ "best": [
+  "FiLM",
+  "re-plan every 4 steps"
+ ],
+ "paraphrase": 0.225,
+ "grounding": {
+  "went_for_named": [
+   30,
+   30
+  ],
+  "picked": [
+   13,
+   30
+  ]
+ }
+}

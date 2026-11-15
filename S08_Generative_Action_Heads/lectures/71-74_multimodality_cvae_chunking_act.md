@@ -85,4 +85,3 @@ Our compact ACT: d = 256, 4 + 4 layers, ≈22M parameters including ResNet-18, t
 ## References
 - Kingma & Welling 2014 (VAE); Sohn et al. 2015 (CVAE)
 - Zhao et al. 2023, *Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware* (ACT/ALOHA)
-- Kandapagari, *Action Models for Robot Learning*, §10.2

@@ -58,4 +58,3 @@ Scaling to building a tower of 7 blocks: BFS takes 0.94 s, greedy 21 ms. **Heuri
 - Fikes & Nilsson 1971, *STRIPS*; McDermott et al. 1998, *PDDL*
 - Helmert 2006, *The Fast Downward Planning System*
 - Ahn et al. 2022, *SayCan*; Garrett et al. 2020, *PDDLStream*
-- Kandapagari, *Action Models for Robot Learning*, §4.1, Exercise 4.x.1

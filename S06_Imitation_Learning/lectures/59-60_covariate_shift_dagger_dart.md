@@ -82,4 +82,3 @@ The video replays BC-70 and DAgger on the same episode with *identical* actuator
 ## References
 - Ross & Bagnell 2010; Ross, Gordon & Bagnell 2011 (DAgger)
 - Laskey et al. 2017 (DART); Kelly et al. 2019 (HG-DAgger)
-- Kandapagari, *Action Models for Robot Learning*, §6.3, Exercises 6.x.2–6.x.3

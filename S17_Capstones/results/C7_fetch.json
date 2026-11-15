@@ -1,0 +1,15 @@
+{
+ "delivered": 23,
+ "n": 30,
+ "stages": {
+  "drive to table": 1.0,
+  "pick the right cube": 0.8666666666666667,
+  "(picked a wrong cube)": 0.03333333333333333,
+  "drive to box": 1.0,
+  "delivered": 0.7666666666666667
+ },
+ "grounding": [
+  20,
+  24
+ ]
+}

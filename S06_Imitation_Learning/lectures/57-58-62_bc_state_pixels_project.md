@@ -60,4 +60,3 @@ How to read it:
 ## References
 - Pomerleau 1989 (ALVINN); Zhao et al. 2023 (ACT, L1 + chunks); Chi et al. 2023 (Diffusion Policy, relative targets)
 - Mandlekar et al. 2021 (robomimic: what matters in learning from offline human demonstrations)
-- Kandapagari, *Action Models for Robot Learning*, §6.2–6.3

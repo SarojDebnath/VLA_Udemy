@@ -54,4 +54,3 @@ The second row is deliberately modest: a tiny model with 9 seconds of training a
 ## References
 - Vaswani et al. 2017, *Attention Is All You Need*; Radford et al. 2019 (GPT-2)
 - Karpathy, *minGPT / nanoGPT*
-- Kandapagari, *Action Models for Robot Learning*, §8.1

@@ -48,7 +48,7 @@ Lessons that recur in S13 (fine-tuning for a new robot):
 - tool-frame conventions differ (z vs x approach axis),
 - low-level controller quality (gravity compensation, gains) changes what the same action does.
 
-## Where classical methods still carry the load (book §4.4)
+## Where classical methods still carry the load
 Even in 2026 VLA systems:
 1. **Below the policy:** IK, operational-space/impedance control, joint servos at 1 kHz.
 2. **Around the policy:** collision checking, workspace limits, force thresholds (safety shields, S15).
@@ -58,6 +58,5 @@ Even in 2026 VLA systems:
 The dividing line moves up over time, but the classical stack never disappears.
 
 ## References
-- Kandapagari, *Action Models for Robot Learning*, §4.4–4.5, Exercises 4.x.2–4.x.3
 - Laskey et al. 2017, *DART*; Mandlekar et al. 2023, *MimicGen*
 - Open X-Embodiment Collaboration 2023 (arXiv:2310.08864)

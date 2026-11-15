@@ -40,6 +40,9 @@ so for the heavy rows use the downloads or Colab.
 | S17 C1 / C2 | language sorter (uses S09), ALOHA ACT | 4 / 4 min (+25 min for C2's ACT) | 🟡 GPU |
 | S17 C4 | G1 humanoid VLA (ACT and FiLM, 1,000 demos) | 38 min | 🟡 GPU |
 | S17 C5 / C6 / C7 | tower builder, data engine, mobile fetch | 5 / 13 / 3 min | 🟡 GPU |
+| S17 C8 | city driver: records 800 drives (2 min on 30 cores), trains the mini driving VLA (16 min) | ~25 min with evaluation and video | 🟡 GPU (≥ 12 GB for training; the downloaded weights run on a laptop) |
+
+S16 150 (NVIDIA Alpamayo 2 Edge) trains nothing: it runs NVIDIA's released model, which needs a Linux GPU with ≥ 16 GB and bf16 (Colab L4/A100).
 
 Everything not listed (S01–S04, S14, most of S09, S12, S15, S16) trains nothing large and runs in minutes on a laptop.
 
